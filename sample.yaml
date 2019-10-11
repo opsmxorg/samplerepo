@@ -10,14 +10,14 @@ spec:
         app: webapp
     spec:
       containers:
-        - image: 'gcr.io/opsmx-project/webappimg:latest'
+        - image: 'gcr.io/opsmx-project/samplewebapp:latest'
           name: webapp-pod
           ports:
             - containerPort: 8080
               name: http
               protocol: TCP
       imagePullSecrets:
-        - name: regcred
+        - name: eswsecr
 ---
 apiVersion: v1
 kind: Service
