@@ -10,7 +10,7 @@ spec:
         app: webapp
     spec:
       containers:
-        - image: 'gcr.io/opsmx-project/samplewebapp:latest'
+        - image: 'gcr.io/opsmx-project/samplewebapp'
           name: webapp-pod
           ports:
             - containerPort: 8080
