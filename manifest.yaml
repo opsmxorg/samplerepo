@@ -13,7 +13,7 @@ spec:
         app: opsmx-restapp
     spec:
       containers:
-        - image: docker.io/opsmx11/restapp
+        - image: docker.io/vijayendarr/mynginx
           imagePullPolicy: Always
           name: restapp
           ports:
