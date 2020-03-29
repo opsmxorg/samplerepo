@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: opsmx-restapp
+  name: opsmx-nginx
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: opsmx-restapp
+      app: opsmx-nginx
   template:
     metadata:
       labels:
-        app: opsmx-restapp
+        app: opsmx-nginx
     spec:
       containers:
         - image: docker.io/vijayendarr/mynginx
           imagePullPolicy: Always
-          name: restapp
+          name: nginx
           ports:
             - containerPort: 8080
               name: http
@@ -27,7 +27,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: opsmx-rest-service
+  name: opsmx-nginx-service
 spec:
   type: LoadBalancer
   ports:
@@ -40,4 +40,4 @@ spec:
       protocol: TCP
       name: reports
   selector:
-    app: opsmx-restapp
+    app: opsmx-nginx
