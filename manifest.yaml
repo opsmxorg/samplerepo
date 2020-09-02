@@ -27,7 +27,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: opsmx-nginx-services
+  name: opsmx-nginx-service
 spec:
   type: LoadBalancer
   ports:
